@@ -1,0 +1,270 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ScrollBar CSS*/
+::-webkit-scrollbar {
+  width: 10px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #d8d4d4;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(94, 94, 94);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(31, 31, 31);
+}
+
+/* To hide input[type = number] increment buttons */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Styling the Body */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #bababa;
+  font-family: "poppins", sans-serif;
+  height: 100vh;
+}
+
+.form-container {
+  background-color: #f6f5f5;
+  min-width: 20%;
+  max-width: auto;
+  height: auto;
+  padding: 25px;
+  border-radius: 22px;
+}
+
+.form-container__title {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.form-container__title i {
+  font-size: 30px;
+}
+
+.form-container__title span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.form .form__input-group {
+  position: relative;
+  margin: 2px 0;
+}
+
+.form .form__input-group input {
+  padding: 5px 7px;
+  margin: 10px;
+  width: 200px;
+  height: 30px;
+  background-color: transparent;
+  outline: none;
+  border: black 0.5px solid;
+  border-radius: 5px;
+}
+
+.form .form__input-group label {
+  position: absolute;
+  top: 1rem;
+  left: 1.2rem;
+  font-size: 12px;
+  cursor: text;
+  background-color: #f6f5f5;
+  padding: 0 1.5px;
+  transition: 0.5s all ease;
+}
+
+.form .form__input-group input:hover {
+  border: black 1.5px solid;
+}
+
+.form .form__input-group input:focus {
+  border: black 2px solid;
+}
+
+.form .form__input-group input:focus ~ label,
+.form .form__input-group input:not(:placeholder-shown) ~ label {
+  top: 1px;
+  font-size: 11px;
+}
+
+.form .form__input-group input[type="file"] {
+  border: none;
+}
+
+.form .form__input-group i {
+  cursor: pointer;
+}
+
+.form .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.form .btn button {
+  padding: 5px 6px;
+  width: 120px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bolder;
+  border-radius: 5px;
+  letter-spacing: 1.5px;
+  transition: 0.5s all ease;
+  background-color: #bababaaf;
+  border: 2px solid black;
+}
+
+.form .btn button:hover {
+  background-color: black;
+  color: white;
+}
+
+.form .btn i {
+  transform: rotate(-15deg);
+}
+
+/* CSS for show-data */
+.show-data {
+  display: flex;
+  margin: 100px;
+  overflow-x: scroll;
+  max-width: 50%;
+}
+
+.product-card {
+  display: grid;
+  place-items: center;
+  min-width: 180px;
+  max-width: auto;
+  height: 180px;
+  border-radius: 6px;
+  background-color: #ecebeb;
+  font-size: 12px;
+  margin: 10px 50px;
+  padding: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.product-card__header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.header__price {
+  background: black;
+  padding: 1px 6px;
+  border-radius: 10px;
+  color: white;
+}
+
+.product-card__image-container {
+  width: 90px;
+  height: 60px;
+  padding: 2px;
+  border: #bababa solid 2px;
+  border-radius: 3px;
+}
+
+.product-card__image-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.product-card__description {
+  border: 0.2px solid rgb(54, 54, 54);
+  padding: 20px 35px;
+}
+
+/* CSS for tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0px;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+  font-size: 10px;
+  font-weight: 200;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* Responsiveness */
+
+@media only screen and (max-width: 1060px) {
+  body {
+    margin-top: 50px;
+    flex-direction: column;
+    height: auto;
+  }
+  .show-data {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 70px 0px;
+    overflow: visible;
+  }
+  .product-card {
+    margin: 0 0 50px 0;
+  }
+}
+@media only screen and (max-width: 520px) {
+  body {
+    height: auto;
+  }
+  .show-data {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 70px 0px;
+  }
+  .product-card {
+    margin: 0 0 50px 0;
+  }
+}
